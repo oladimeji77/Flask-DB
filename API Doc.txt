@@ -1,0 +1,73 @@
+API Overview
+
+This API provides a way to interact with the data and functionality of the wallet app to be deployed to production. It is a RESTful API, which means that it uses HTTP verbs to represent different actions. For example, the GET verb is used to retrieve data, the POST verb is used to create data, and the PUT verb is used to update data.
+
+API Endpoints
+
+The API has the following endpoints:
+
+/users: This endpoint returns a list of all users.
+/users/<wallet_id>: This endpoint returns a single user by ID.
+/users/create/<wallet_no>: This endpoint creates a new user.
+/users/update/<wallet_no>: This endpoint updates an existing user.
+/users/delete/<wallet>: This endpoint deletes a user.
+/users/delete/<wallet>/kyc: This endpoint update the know your custmer details
+API Parameters
+
+The API parameters are described in the following table:
+
+Parameter	Description
+id	The ID of the user.
+name	The name of the user.
+email	The email address of the user.
+password	The password of the user.
+API Examples
+
+The following code examples show how to use the API:
+zeni****
+
+Code snippet
+// Get a list of all users.
+curl -X GET "https://api.zeni****.com/users"
+
+// Get a single user by Wallet ID.
+curl -X GET "https://api.zeni****.com/users/12345"
+
+// Create a new user.
+curl -X POST "https://api.zeni****.com/users" -d '{
+  "name": "Ola Rooney",
+  "email": "olarooney@example.com",
+  "password": "secret"
+}'
+
+// Update an existing user.
+curl -X PUT "https://api.example.com/users/12345" -d '{
+  "name": "Ola Rooney",
+  "email": "olarooney@zeni****.com"
+}'
+
+// Delete a user with the wallet ID.
+curl -X DELETE "https://api.zeni****.com/users/12345"
+Use code with caution. Learn more
+Error Messages
+
+The API returns error messages if there are any problems with the request. The error messages are returned in the errors property of the response object.
+
+Status Codes
+
+The API uses HTTP status codes to indicate the success or failure of a request. The following status codes are used:
+
+Status Code	Description
+200 OK	The request was successful.
+400 Bad Request	The request was malformed.
+401 Unauthorized	The request was unauthorized.
+403 Forbidden	The request was forbidden.
+404 Not Found	The resource was not found.
+500 Internal Server Error	An error occurred on the server.
+Maintaining the Documentation
+
+The API documentation should be maintained in a version control system, such as Git. This will allow you to track changes to the documentation and easily revert to previous versions if necessary.
+
+The documentation should also be linked to from the web app's website. This will make it easy for developers to find the documentation when they need it.
+
+I hope this helps!
